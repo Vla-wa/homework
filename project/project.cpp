@@ -11,7 +11,7 @@ private:
 public:
 
     int In10System() {
-        int result = 0;
+        double result = 0;
         int cnt = 0;
         while (number > 0)
         {
@@ -28,22 +28,22 @@ public:
         int digit = number;
         int digit1 = number;
         std::string fish = "";
-        
-        while (digit1>0) {
+
+        while (digit1 > 0) {
             digit = digit1 % base2;
             digit1 = digit1 / base2;
             theNumbers.push_back(seledka[digit]);
         }
-        
-        for (int i = ; i >= 0; i--) { //Доработать
+
+        for (int i = theNumbers.size() - 1; i >= 0; i--) { 
             fish += theNumbers[i];
         }
         return fish;
     }
 
     void run() {
-        bool choize = true;
-        while (choize) {
+        std::string choise = "yes";
+        while (choise == "yes") {
             std::cout << "Введите систему счисления в вашем числе: \n";
             std::cin >> base;
             std::cout << "Введите ваше число: \n";
@@ -56,8 +56,8 @@ public:
             }
             In10System();
             std::cout << "Ваше число: " << In2to30System() << std::endl;
-            std::cout << "Do you want continue working? (yes/no)";
-            std::cin >> choize;
+            std::cout << "Do you want continue working? (yes/no) ";
+            std::cin >> choise;
         }
     }
 
@@ -69,4 +69,3 @@ int main()
     Notation b{};
     b.run();
 }
-
