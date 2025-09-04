@@ -1,6 +1,7 @@
 ﻿#include <iostream>
 #include <vector>
 #include <cmath> 
+
 class Notation {
 private:
     int base = 0;
@@ -8,14 +9,15 @@ private:
     int number = 1101;
     int size = 1;
     std::vector <std::string> const seledka = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" };
+
 public:
 
     int In10System() {
         int result = 0;
-        int cnt = 0;
+        int count = 0;
         while (number > 0)
         {
-            result += number % 10 * pow(base, cnt++);
+            result += number % 10 * pow(base, count++);
             number /= 10;
         }
         number = result;
@@ -35,7 +37,7 @@ public:
             theNumbers.push_back(seledka[digit]);
         }
         
-        for (int i = 1; i >= 0; i--) { //Доработать
+        for (int i = theNumbers.size() - 1; i >= 0; i--) { //Доработать
             fish += theNumbers[i];
         }
         return fish;
@@ -56,8 +58,7 @@ public:
             }
             In10System();
             std::cout << "Ваше число: " << In2to30System() << std::endl;
-            std::cout << "Do you want continue working? (yes/no)";
-            std::cin >> choize;
+
         }
     }
 
