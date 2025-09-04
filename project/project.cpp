@@ -35,7 +35,7 @@ public:
             theNumbers.push_back(seledka[digit]);
         }
         
-        for (int i = ; i >= 0; i--) { //Доработать
+        for (int i = 1; i >= 0; i--) { //Доработать
             fish += theNumbers[i];
         }
         return fish;
